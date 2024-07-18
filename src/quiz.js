@@ -2,15 +2,15 @@
 class Quiz {
 
      answerArray = [];
-
+    scoureofquestion=[]
       
-     secoure=document.getElementsByClassName('Secoure-question')[0].innerHTML
+    //  secoure=document.getElementsByClassName('Secoure-question')[0].innerHTML
       time=0
-
+      quesscoure=0
       htmlElement = ''
-
+       timeforone = 0
       currentIndex = 0;
-
+      timeforone=0
       intervalID = null;
 
       constructor(htmlElement) {
@@ -59,9 +59,17 @@ class Quiz {
       }      
            
         }
-
+       let allquestion= this.htmlElement.getElementsByClassName('questions')
+       for (let i = 0; i < allquestion.length; i++) {
+        let getscoure=allquestion[i].getAttribute('data-score')
+        this.scoureofquestion.push(Number(getscoure))
+        
+        
+       }
+       
+        
     }
-
+    
     next = () => {
  
       this.time=0
@@ -94,7 +102,8 @@ class Quiz {
       let option= e.target.closest('.option');
 
       let optioniner=option.innerHTML
-     
+     console.log(this.scoureofquestion,'q')
+     console.log([this.currentIndex])
      
      
        if ( optioniner == this.answerArray[this.currentIndex]) {
@@ -103,11 +112,13 @@ class Quiz {
   
         this.next()
         
-        
-        
+       this.quesscoure = this.quesscoure + this.scoureofquestion[this.currentIndex-1]
+      
+        console.log(this.quesscoure)
         this.time=0
-  
-        document.getElementsByClassName('Secoure-game')[0].innerHTML="0"+seces  
+        
+        document.getElementsByClassName('Secoure-game')[0].innerHTML = this.quesscoure
+        
   
       }
   
@@ -127,7 +138,7 @@ class Quiz {
            
            if (this.currentIndex === quizWithOptions.length) {
   
-            this.time=false  
+            
   
            Array.from(quizWithOptions).map((quizOption) => {
   
@@ -142,28 +153,25 @@ class Quiz {
     }
   
     startTimeout = () => {
-  
+      let quizWithOptions = this.htmlElement.getElementsByClassName('quiz-option')
+  let totaltime=document.getElementsByClassName('timer')[0].getAttribute('data-totaltime')
+ let timeforquestions= Number(totaltime)
+this.timeforall=timeforquestions*60
+
+this.timeforone=this.timeforall/quizWithOptions.length
+
     this.intervalID = setInterval(() => {
-          
-           this.time++
-          
-           if (this.time<10) {
+      this.time++
+      document.getElementsByClassName('time-left')[0].innerHTML= this.time
+      if (this.time == this.timeforone ) {
+        alert('time finish')
+        this.next()
+        this.time=0
+        
+       }
 
-            document.getElementsByClassName('time-left')[0].innerHTML="0"+this.time
-
-          }
-          else{
-
-            document  .getElementsByClassName('time-left')[0].innerHTML=this.time
-           
-            this.time=0
-              
-              alert('time finish turn next')
-           
-              this.next()
-           }
-            
-        }, 1000); 
+    },1000);
+  
     }
 
     stopTimeout = () => {

@@ -11,14 +11,14 @@
     <div class="quiz-header">
         
       <h1>Quiz Game</h1>
-      <div class="timer">Time Left: <span class="time-left">00</span> seconds</div>
+      <div class="timer" data-totaltime="1">Time Left: <span class="time-left">00</span> seconds</div>
       <div class="Secoure">Your Secoure: <span class="Secoure-game"  >0</span>point</div>
       
     </div>
       <div class="quiz-game">
         <ul>
           <li class="quiz-option">
-            <div class="questions">What is the capital of France?</div>
+            <div class="questions" data-score="10">What is the capital of France?</div>
             <div class="options">
               <div class="option" data-selected="true">Paris</div>
               <div class="option">London</div>
@@ -28,7 +28,7 @@
           </li>
           
           <li class="quiz-option">
-            <div class="questions">Who wrote "Hamlet"?</div>
+            <div class="questions" data-score="20">Who wrote "Hamlet"?</div>
             <div class="options">
               <div class="option">William Shakespeare</div>
               <div class="option">Charles Dickens</div>
@@ -38,7 +38,7 @@
           </li>
           
           <li class="quiz-option">
-            <div class="questions">What year did the Titanic sink?</div>
+            <div class="questions" data-score="30">What year did the Titanic sink?</div>
             <div class="options">
               <div class="option">1912</div>
               <div class="option">1905</div>
@@ -48,7 +48,7 @@
           </li>
           
           <li class="quiz-option">
-            <div class="questions" >Who painted the Mona Lisa?</div>
+            <div class="questions" data-score="10">Who painted the Mona Lisa?</div>
             <div class="options">
               <div class="option"data-selected="true">Leonardo da Vinci</div>
               <div class="option">Pablo Picasso</div>
@@ -58,9 +58,9 @@
           </li>
           
           <li class="quiz-option">
-            <div class="questions" >What is the tallest mountain in the world?</div>
+            <div class="questions" data-score="10">What is the tallest mountain in the world?</div>
             <div class="options">
-              <div class="option"data-selected="true">Mount Everest</div>
+              <div class="option" data-selected="true">Mount Everest</div>
               <div class="option">K2</div>
               <div class="option">Mount Kilimanjaro</div>
               <div class="option">Mount Fuji</div>
@@ -68,7 +68,7 @@
           </li>
           
           <li class="quiz-option">
-            <div class="questions">Who invented the light bulb?</div>
+            <div class="questions" data-score="10">Who invented the light bulb?</div>
             <div class="options" data-selected="true">
               <div class="option">Thomas Edison</div>
               <div class="option">Nikola Tesla</div>
@@ -78,7 +78,7 @@
           </li>
           
           <li class="quiz-option">
-            <div class="questions">What is the largest planet in our solar system?</div>
+            <div class="questions"  data-score="10">What is the largest planet in our solar system?</div>
             <div class="options">
               <div class="option" data-selected="true">Jupiter</div>
               <div class="option">Saturn</div>
@@ -88,17 +88,17 @@
           </li>
           
           <li class="quiz-option">
-            <div class="questions">Who wrote "To Kill a Mockingbird"?</div>
-            <div class="options"    >
-              <div class="option"data-selected="true">Harper Lee</div>
-              <div class="option" >F. Scott Fitzgerald</div>
-              <div class="option">Mark Twain</div>
-              <div class="option">John Steinbeck</div>
+            <div class="questions" data-score="10">Who wrote "To Kill a Mockingbird"?</div>
+            <div class="options" >
+              <div class="option" data-selected="true">Harper Lee</div>
+              <div class="option"> F. Scott Fitzgerald </div>
+              <div class="option"> Mark Twain </div>
+              <div class="option"> John Steinbeck </div>
             </div>
           </li>
           
           <li class="quiz-option">
-            <div class="questions">Which planet is known as the Red Planet?</div>
+            <div class="questions"  data-score="10">Which planet is known as the Red Planet?</div>
             <div class="options">
               <div class="option"data-selected="true">Mars</div>
               <div class="option">Venus</div>
@@ -108,7 +108,7 @@
           </li>
           
           <li class="quiz-option">
-            <div class="questions">Who painted the Sistine Chapel ceiling?</div>
+            <div class="questions" data-score="10">Who painted the Sistine Chapel ceiling?</div>
             <div class="options">
               <div class="option "data-selected="true">Michelangelo</div>
               <div class="option">Leonardo da Vinci</div>
@@ -122,16 +122,23 @@
     </div>
     
     <div class="controls">
-      
+
       <button class="btn-next">Next</button>
+        
       <button class="btn-prev">Previous</button>
-      <div class="Secoure-question">2</div>
+   
     </div>
+  
   </div>
-    </div>
+  
+</div>
+
 </body>
+
 </html>
+
 <script src="../src/quiz.js"></script>
+
 <script>
 
 
