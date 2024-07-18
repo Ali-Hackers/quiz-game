@@ -3,8 +3,8 @@ class Quiz {
 
      answerArray = [];
 
-      count=0
-
+      
+     secoure=document.getElementsByClassName('Secoure-question')[0].innerHTML
       time=0
 
       htmlElement = ''
@@ -94,20 +94,20 @@ class Quiz {
       let option= e.target.closest('.option');
 
       let optioniner=option.innerHTML
-  
-        this.ansers.push(optioniner)
-  
-       if (optioniner==this.answerArray[this.currentIndex]) {
+     
+     
+     
+       if ( optioniner == this.answerArray[this.currentIndex]) {
   
         option.classList.add('correct-answer');
   
         this.next()
-  
-        this.count++
-  
+        
+        
+        
         this.time=0
   
-        document.getElementsByClassName('Secoure-game')[0].innerHTML="0"+this.count
+        document.getElementsByClassName('Secoure-game')[0].innerHTML="0"+seces  
   
       }
   
@@ -146,15 +146,15 @@ class Quiz {
     this.intervalID = setInterval(() => {
           
            this.time++
-
+          
            if (this.time<10) {
 
-            this.htmlElement.getElementsByClassName('time-left')[0].innerHTML="0"+this.time
+            document.getElementsByClassName('time-left')[0].innerHTML="0"+this.time
 
           }
           else{
 
-            this.htmlElement.getElementsByClassName('time-left')[0].innerHTML=this.time
+            document  .getElementsByClassName('time-left')[0].innerHTML=this.time
            
             this.time=0
               
